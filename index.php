@@ -11,8 +11,7 @@ if(isset( $_POST['submit'])){
         $ftype = $file['type'];
         // extension
         $fextension = pathinfo($fname,PATHINFO_EXTENSION);
-                // all this data can be changed like the type and extension which will accept a fake type
-               // but all we need to check the real type of file is useing this function
+        //check image type
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $Type = finfo_file($finfo,$file['tmp_name'] );
         finfo_close($finfo);
